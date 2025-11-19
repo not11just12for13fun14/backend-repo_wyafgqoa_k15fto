@@ -12,37 +12,74 @@ Model name is converted to lowercase for the collection name:
 """
 
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, List, Literal
 
-# Example schemas (replace with your own):
-
+# Core user/profile
 class User(BaseModel):
-    """
-    Users collection schema
-    Collection name: "user" (lowercase of class name)
-    """
     name: str = Field(..., description="Full name")
     email: str = Field(..., description="Email address")
-    address: str = Field(..., description="Address")
-    age: Optional[int] = Field(None, ge=0, le=120, description="Age in years")
-    is_active: bool = Field(True, description="Whether user is active")
+    avatar: Optional[str] = Field(None, description="Avatar URL")
+    phone: Optional[str] = Field(None)
+    is_active: bool = Field(True)
 
-class Product(BaseModel):
-    """
-    Products collection schema
-    Collection name: "product" (lowercase of class name)
-    """
-    title: str = Field(..., description="Product title")
-    description: Optional[str] = Field(None, description="Product description")
-    price: float = Field(..., ge=0, description="Price in dollars")
-    category: str = Field(..., description="Product category")
-    in_stock: bool = Field(True, description="Whether product is in stock")
+class Friend(BaseModel):
+    user_id: str = Field(..., description="User id of the owner")
+    friend_id: str = Field(..., description="User id of the friend")
+    status: Literal["pending","accepted","blocked"] = "pending"
 
-# Add your own schemas here:
-# --------------------------------------------------
+# Venues and Events
+class Venue(BaseModel):
+    name: str
+    type: Literal["court","studio","recovery"]
+    tags: List[str] = []
+    address: str
+    rating: float = 4.5
+    distance_km: float = 1.2
+    price_per_30min: float = 10.0
+    image: Optional[str] = None
+    phone: Optional[str] = None
 
-# Note: The Flames database viewer will automatically:
-# 1. Read these schemas from GET /schema endpoint
-# 2. Use them for document validation when creating/editing
-# 3. Handle all database operations (CRUD) directly
-# 4. You don't need to create any database endpoints!
+class Offer(BaseModel):
+    title: str
+    description: Optional[str] = None
+    discount_percent: Optional[int] = None
+    image: Optional[str] = None
+    venue_type: Optional[Literal["court","studio","recovery"]] = None
+
+class Event(BaseModel):
+    title: str
+    category: Literal["sports","dance","workshop","other"] = "sports"
+    venue_id: Optional[str] = None
+    date: Optional[str] = None
+    price: float = 0.0
+    image: Optional[str] = None
+
+# Social/community
+class Game(BaseModel):
+    title: str
+    sport: str
+    visibility: Literal["public","private"] = "public"
+    host_user_id: Optional[str] = None
+    max_players: int = 10
+    players: List[str] = []
+    description: Optional[str] = None
+
+class SocialPost(BaseModel):
+    user_id: Optional[str] = None
+    content: str
+    image: Optional[str] = None
+
+# Bookings
+class Booking(BaseModel):
+    user_id: Optional[str] = None
+    venue_id: str
+    venue_name: str
+    venue_type: Literal["court","studio","recovery"]
+    date: str
+    start_time: str
+    end_time: str
+    slots: int = 1
+    total_amount: float
+    status: Literal["upcoming","completed","cancelled"] = "upcoming"
+    share_to_social: bool = False
+

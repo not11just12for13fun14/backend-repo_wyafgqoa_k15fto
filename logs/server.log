@@ -1,0 +1,41 @@
+INFO:     Will watch for changes in these directories: ['/home/workspace']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [152] using StatReload
+INFO:     Started server process [154]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.20.0.1:34538 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:34546 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34564 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34562 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34572 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34546 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34562 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34564 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34572 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34588 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34598 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34598 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34588 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60960 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34598 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60966 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34588 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43402 - "GET /api/venues?vtype=studio HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43402 - "GET /api/venues?vtype=recovery HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59202 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59216 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59218 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59220 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59202 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59218 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59216 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59220 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59230 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59238 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59230 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59238 - "GET /api/activities/recent HTTP/1.1" 200 OK
+INFO:     172.20.0.1:40820 - "GET /api/offers HTTP/1.1" 200 OK
+INFO:     172.20.0.1:40822 - "GET /api/venues?vtype=court HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59230 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59238 - "GET /api/activities/recent HTTP/1.1" 200 OK
